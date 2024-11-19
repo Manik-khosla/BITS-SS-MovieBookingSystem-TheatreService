@@ -1,0 +1,6 @@
+[
+    { "name": "PVR Cinemas", "location": "Mumbai", "capacity": 200 },
+    { "name": "INOX", "location": "Delhi", "capacity": 150 },
+    { "name": "Cinepolis", "location": "Bangalore", "capacity": 250 }
+]
+
