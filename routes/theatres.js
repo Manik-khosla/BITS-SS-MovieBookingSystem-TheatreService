@@ -3,7 +3,7 @@ const Theatre = require('../models/theatre');
 const router = express.Router();
 
 // List all theatres
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const theatres = await Theatre.find();
         res.json(theatres);
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // Add a theatre (Admin)
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     const { name, location, capacity } = req.body;
 
     const theatre = new Theatre({
@@ -25,6 +25,7 @@ router.post('/', async (req, res) => {
     try {
         const savedTheatre = await theatre.save();
         res.status(201).json(savedTheatre);
+        console.log("New Theatre details added successfully " + savedTheatre);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
